@@ -81,8 +81,11 @@ namespace GUI.ViewModels
                 case "Help":
                     CurrentViewModel = new HelpViewModel();
                     break;
-                case "Close":
+                case "CloseSession":
                     CurrentViewModel = new MainViewViewModel();
+                    break;
+                case "CreateSession":
+                    CurrentViewModel = new SessionCreatorViewModel();
                     break;
                 default:
                     CurrentViewModel = new MainViewViewModel();

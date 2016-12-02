@@ -24,6 +24,9 @@
         <DataTemplate DataType="{x:Type viewmodel:HelpViewModel}">
             <view:HelpView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodel:SessionCreatorViewModel}">
+            <view:SessionCreatorView/>
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -36,7 +39,8 @@
         <Menu Grid.Row="0">
             
             <MenuItem Header="Training Sessions">
-                <MenuItem Header="New Training Session"/>
+                <MenuItem Header="New Training Session" Command="{Binding NavCommand}" CommandParameter="CreateSession"/>
+                <MenuItem Header="Open Training Session" Command="{Binding NavCommand}" CommandParameter="CreateSession"/>
                 <MenuItem Header="Save Training Session"/>
                 <!-- This command needs to be disable in later version, when no session is opened-->
                 <MenuItem Header="Close Training Session" Command="{Binding NavCommand}" CommandParameter="CloseSession"/>
