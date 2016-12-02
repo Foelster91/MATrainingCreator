@@ -1,0 +1,53 @@
+﻿<Window x:Class="GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:view="clr-namespace:GUI.Views"
+        xmlns:viewmodel="clr-namespace:GUI.ViewModels"
+        Title="MainWindow" Height="720" Width="1280" WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <viewmodel:MainWindowViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewmodel:MainViewViewModel}">
+            <view:MainView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodel:ExerciseAdministrationViewModel}">
+            <view:ExerciseAdministrationView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodel:ExerciseCategoryAdministrationViewModel}">
+            <view:ExerciseCategoryAdministrationView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodel:InformationViewModel}">
+            <view:InformationView/>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0">
+            
+            <MenuItem Header="Training Sessions">
+                <MenuItem Header="New Training Session"/>
+                <MenuItem Header="Save Training Session"/>
+                <MenuItem Header="Close Training Session"/>
+            </MenuItem>
+            
+            <MenuItem Header="Administration">
+                <MenuItem Header="Exercises" Command="{Binding NavCommand}" CommandParameter="AdministrationExercises"/>
+                <MenuItem Header="Exercise Categories" Command="{Binding NavCommand}" CommandParameter="AdministrationExerciseCategories"/>
+            </MenuItem>
+
+            <MenuItem Header="Information" Command="{Binding NavCommand}" CommandParameter="Information"/>
+            <MenuItem Header="Help"/>               
+        </Menu>
+        
+        <ContentControl Grid.Row="1" Content="{Binding CurrentViewModel}"/>
+        
+        <StatusBar Grid.Row="2"/>
+        
+    </Grid>
+</Window>
