@@ -10,8 +10,13 @@ namespace GUI
 {
     public class ViewModelBase : INotifyPropertyChanged
     {
+        //create a new eventhandler, initialize with empty delegate to prevent exceptions
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
+        /// <summary>
+        /// Implementation for the OnpropertyChanged method
+        /// </summary>
+        /// <param name="propertyName"></param>
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             if (this.PropertyChanged != null)
@@ -20,6 +25,13 @@ namespace GUI
             }
         }
 
+        /// <summary>
+        /// Implementation for the setproperty method 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="member"></param>
+        /// <param name="val"></param>
+        /// <param name="propertyName"></param>
         protected virtual void SetProperty<T>(ref T member, T val, 
             [CallerMemberName] string propertyName = null)
         {

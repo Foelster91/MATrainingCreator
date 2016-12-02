@@ -34,7 +34,7 @@ namespace GUI.ViewModels
         }
 
         /// <summary>
-        /// Binding for the 
+        /// Binding for the Relay command
         /// </summary>
         public RelayCommand<string> NavCommand
         {
