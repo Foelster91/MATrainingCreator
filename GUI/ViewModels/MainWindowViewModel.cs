@@ -78,6 +78,12 @@ namespace GUI.ViewModels
                 case "Information":
                     CurrentViewModel = new InformationViewModel();
                     break;
+                case "Help":
+                    CurrentViewModel = new HelpViewModel();
+                    break;
+                case "Close":
+                    CurrentViewModel = new MainViewViewModel();
+                    break;
                 default:
                     CurrentViewModel = new MainViewViewModel();
                     break;

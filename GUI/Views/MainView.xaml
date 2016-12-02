@@ -14,13 +14,15 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
         <Label Grid.Row="0" Content="Welcome to the Martial Arts Training Creator V0.1" FontSize="48"/>
         
         <Label Grid.Row="1" Content="What is the project about?" FontSize="36"/>
         
-        <Label Grid.Row="2" Content="I want to enable you to create your own high-quality training session with little or no effort!" FontSize="16"/>
+        <Label Grid.Row="2" Content="I want to enable you to create your own high-quality training sessions with little effort!" FontSize="16"/>
         
+        <Label Grid.Row="3" Content="Planned features: prebuild set of exercises, add new exercises, create training sessions, program supports by providing recommendations, print sessions out as PDFs" FontSize="14"/>
     </Grid>
 </UserControl>

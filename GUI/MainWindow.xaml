@@ -7,6 +7,7 @@
     <Window.DataContext>
         <viewmodel:MainWindowViewModel/>
     </Window.DataContext>
+    <!--Move datatemplates to another location later?-->
     <Window.Resources>
         <DataTemplate DataType="{x:Type viewmodel:MainViewViewModel}">
             <view:MainView/>
@@ -20,6 +21,9 @@
         <DataTemplate DataType="{x:Type viewmodel:InformationViewModel}">
             <view:InformationView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodel:HelpViewModel}">
+            <view:HelpView/>
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -28,12 +32,14 @@
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
 
+        <!-- Menu for navigate through the application-->
         <Menu Grid.Row="0">
             
             <MenuItem Header="Training Sessions">
                 <MenuItem Header="New Training Session"/>
                 <MenuItem Header="Save Training Session"/>
-                <MenuItem Header="Close Training Session"/>
+                <!-- This command needs to be disable in later version, when no session is opened-->
+                <MenuItem Header="Close Training Session" Command="{Binding NavCommand}" CommandParameter="CloseSession"/>
             </MenuItem>
             
             <MenuItem Header="Administration">
@@ -42,11 +48,13 @@
             </MenuItem>
 
             <MenuItem Header="Information" Command="{Binding NavCommand}" CommandParameter="Information"/>
-            <MenuItem Header="Help"/>               
+            <MenuItem Header="Help" Command="{Binding NavCommand}" CommandParameter="Help"/>               
         </Menu>
         
+        <!-- Display the content in this grid -->
         <ContentControl Grid.Row="1" Content="{Binding CurrentViewModel}"/>
         
+        <!-- Reserve space for the statusbar-->
         <StatusBar Grid.Row="2"/>
         
     </Grid>
