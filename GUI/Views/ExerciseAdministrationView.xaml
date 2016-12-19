@@ -62,7 +62,10 @@
         
         <TextBox Grid.Column="2" Grid.Row="8"/>
 
-        <Button Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="9" Content="Save exercise" Width="120" Height="40"/>
+        <Button Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="9" 
+                VerticalAlignment="Top"
+                Width="120" Height="40"
+                Content="Save exercise"/>
         
     </Grid>
 </UserControl>
