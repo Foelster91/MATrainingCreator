@@ -41,49 +41,49 @@
         <Label Grid.Column="1" Grid.Row="1" Content="Name: "/>
 
         <!-- Textfield for the user to change the name of an exercise -->
-        <TextBox Grid.Column="2" Grid.Row="1"/>
+        <TextBox Grid.Column="2" Grid.Row="1" Margin="0,2,0,2"/>
 
         <!-- Label for the exercise category -->
         <Label Grid.Column="1" Grid.Row="2" Content="Exercise Category: "/>
 
         <!-- Combobox in which the user can select the exercise category -->
-        <ComboBox Grid.Column="2" Grid.Row="2"/>
+        <ComboBox Grid.Column="2" Grid.Row="2" Margin="0,2,0,2"/>
 
         <!-- Label for the description -->
         <Label Grid.Column="1" Grid.Row="3" Content="Description: "/>
 
         <!-- Description for the exercise -->
-        <TextBox Grid.Column="2" Grid.Row="3"/>
+        <TextBox Grid.Column="2" Grid.Row="3" Margin="0,2,0,2"/>
 
         <!-- Label for the time -->
         <Label Grid.Column="1" Grid.Row="4" Content="Time: "/>
 
         <!-- TextBox in which the user can enter the required time for an exercise -->
-        <TextBox Grid.Column="2" Grid.Row="4"/>
+        <TextBox Grid.Column="2" Grid.Row="4" Margin="0,2,0,2"/>
 
         <!-- Label -->
         <Label Grid.Column="1" Grid.Row="5" Content="IsCountable: "/>
 
         <!-- Label -->
-        <CheckBox Grid.Column="2" Grid.Row="5"/>
+        <CheckBox Grid.Column="2" Grid.Row="5" Margin="0,2,0,2"/>
 
         <!-- Label -->
         <Label Grid.Column="1" Grid.Row="6" Content="Number of Repetitions: "/>
 
         <!-- TextBox in which the user can enter the number of repetitions of an exercise -->
-        <TextBox Grid.Column="2" Grid.Row="6"/>
+        <TextBox Grid.Column="2" Grid.Row="6" Margin="0,2,0,2"/>
 
-        <!-- Label -->
+        <!-- Label for the HasSets Property -->
         <Label Grid.Column="1" Grid.Row="7" Content="Has Sets: "/>
 
         <!-- Checkbox that indicates whether an exercise has sets -->
-        <CheckBox Grid.Column="2" Grid.Row="7"/>
+        <CheckBox Grid.Column="2" Grid.Row="7" Margin="0,2,0,2"/>
         
         <!-- Label for the number of sets-->
         <Label Grid.Column="1" Grid.Row="8" Content="Number of Sets: "/>
         
         <!-- Textbox for the user to see or adjust the number of sets in an exercise -->
-        <TextBox Grid.Column="2" Grid.Row="8"/>
+        <TextBox Grid.Column="2" Grid.Row="8" Margin="0,2,0,2"/>
 
         <!-- Button to add a new exercise or to save changes to an existing exercise -->
         <Button Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="9" 
