@@ -56,7 +56,7 @@
         </Menu>
         
         <!-- Display the content in this grid -->
-        <ContentControl Grid.Row="1" Content="{Binding CurrentViewModel}"/>
+        <ContentControl Grid.Row="1" Content="{Binding CurrentViewModel}" Margin="10,10,10,10"/>
         
         <!-- Reserve space for the statusbar-->
         <StatusBar Grid.Row="2"/>
