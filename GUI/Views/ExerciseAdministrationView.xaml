@@ -61,13 +61,14 @@
         <!-- TextBox in which the user can enter the required time for an exercise -->
         <TextBox Grid.Column="2" Grid.Row="4" Margin="0,2,0,2"/>
 
-        <!-- Label -->
+        <!-- Label for the IsCountable Property-->
         <Label Grid.Column="1" Grid.Row="5" Content="IsCountable: "/>
 
-        <!-- Label -->
-        <CheckBox Grid.Column="2" Grid.Row="5" Margin="0,2,0,2"/>
+        <!-- CheckBox that indicates if the exercise is countable or not -->
+        <CheckBox Grid.Column="2" Grid.Row="5" Margin="0,2,0,2"
+                  VerticalAlignment="Center"/>
 
-        <!-- Label -->
+        <!-- Label for the Number of Repetitions Attribute -->
         <Label Grid.Column="1" Grid.Row="6" Content="Number of Repetitions: "/>
 
         <!-- TextBox in which the user can enter the number of repetitions of an exercise -->
@@ -77,7 +78,8 @@
         <Label Grid.Column="1" Grid.Row="7" Content="Has Sets: "/>
 
         <!-- Checkbox that indicates whether an exercise has sets -->
-        <CheckBox Grid.Column="2" Grid.Row="7" Margin="0,2,0,2"/>
+        <CheckBox Grid.Column="2" Grid.Row="7" Margin="0,2,0,2"
+                  VerticalAlignment="Center"/>
         
         <!-- Label for the number of sets-->
         <Label Grid.Column="1" Grid.Row="8" Content="Number of Sets: "/>
