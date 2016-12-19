@@ -24,7 +24,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         
-        <DataGrid Grid.Column="0" Grid.RowSpan="10"/>
+        <DataGrid Grid.Column="0" Grid.RowSpan="10" Margin="5,5,5,5"/>
         
         <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" 
                Content="Exercise Summary: " 
@@ -62,7 +62,7 @@
         
         <TextBox Grid.Column="2" Grid.Row="8"/>
 
-        <Button Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="9" Content="Save exercise"/>
+        <Button Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="9" Content="Save exercise" Width="120" Height="40"/>
         
     </Grid>
 </UserControl>
