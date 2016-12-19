@@ -23,43 +23,66 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
-        <DataGrid Grid.Column="0" Grid.RowSpan="10" Margin="5,5,5,5"/>
-        
+
+        <!-- Label for the heading of the right side -->
+        <Label Grid.Column="0" Grid.Row="0" 
+               Content="Exercise Selection" 
+               FontSize="18" HorizontalContentAlignment="Center"/>
+
+        <!-- DataGrid that display all the exercises known to the system until this point -->
+        <DataGrid Grid.Column="0" Grid.Row="1" Grid.RowSpan="10" Margin="5,5,5,5"/>
+
+        <!-- Label for the heading of the right side -->
         <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" 
-               Content="Exercise Summary: " 
-               FontSize="16" HorizontalContentAlignment="Center"/>
-        
+               Content="Exercise Summary" 
+               FontSize="18" HorizontalContentAlignment="Center"/>
+
+        <!-- Label for the name-->
         <Label Grid.Column="1" Grid.Row="1" Content="Name: "/>
-        
+
+        <!-- Textfield for the user to change the name of an exercise -->
         <TextBox Grid.Column="2" Grid.Row="1"/>
-        
+
+        <!-- Label for the exercise category -->
         <Label Grid.Column="1" Grid.Row="2" Content="Exercise Category: "/>
 
+        <!-- Combobox in which the user can select the exercise category -->
         <ComboBox Grid.Column="2" Grid.Row="2"/>
 
+        <!-- Label for the description -->
         <Label Grid.Column="1" Grid.Row="3" Content="Description: "/>
 
+        <!-- Description for the exercise -->
         <TextBox Grid.Column="2" Grid.Row="3"/>
 
+        <!-- Label for the time -->
         <Label Grid.Column="1" Grid.Row="4" Content="Time: "/>
 
+        <!-- TextBox in which the user can enter the required time for an exercise -->
         <TextBox Grid.Column="2" Grid.Row="4"/>
 
+        <!-- Label -->
         <Label Grid.Column="1" Grid.Row="5" Content="IsCountable: "/>
 
+        <!-- Label -->
         <CheckBox Grid.Column="2" Grid.Row="5"/>
-        
+
+        <!-- Label -->
         <Label Grid.Column="1" Grid.Row="6" Content="Number of Repetitions: "/>
-        
+
+        <!-- TextBox in which the user can enter the number of repetitions of an exercise -->
         <TextBox Grid.Column="2" Grid.Row="6"/>
 
+        <!-- Label -->
         <Label Grid.Column="1" Grid.Row="7" Content="Has Sets: "/>
 
+        <!-- Checkbox that indicates whether an exercise has sets -->
         <CheckBox Grid.Column="2" Grid.Row="7"/>
         
-        <Label Grid.Column="1" Grid.Row="8" Content="Number of Repetitions: "/>
+        <!-- Label for the number of sets-->
+        <Label Grid.Column="1" Grid.Row="8" Content="Number of Sets: "/>
         
+        <!-- Textbox for the user to see or adjust the number of sets in an exercise -->
         <TextBox Grid.Column="2" Grid.Row="8"/>
 
         <!-- Button to add a new exercise or to save changes to an existing exercise -->
