@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Logic.Models
 {
+    /// <summary>
+    /// The model for the training sessions.
+    /// </summary>
     public class TrainingSession
     {
         #region Properties
@@ -24,7 +27,7 @@ namespace Logic.Models
         public int Time { get; set; }
 
         //Every training session has a set of exercises
-        public ObservableCollection<Exercise> Exercises { get; set; }
+        public ObservableCollection<ExerciseInstance> Exercises { get; set; }
 
         #endregion Properties
     }

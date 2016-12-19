@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Logic.Models
 {
+    /// <summary>
+    /// The model for the exercise objects.
+    /// </summary>
     public class Exercise
     {
         #region Properties
