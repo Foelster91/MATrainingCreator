@@ -77,6 +77,18 @@ namespace GUI.ViewModels
             }
         }
 
+        public Boolean IsCountable
+        {
+            get
+            {
+                return _isCountable;
+            }
+            set
+            {
+                value = _isCountable;
+            }
+        }
+
         public Int32 NumberOfRepetitions
         {
             get
@@ -86,6 +98,18 @@ namespace GUI.ViewModels
             set
             {
                 value = _numberOfRepetitions;
+            }
+        }
+
+        public Boolean HasSets
+        {
+            get
+            {
+                return _hasSets;
+            }
+            set
+            {
+                value = _hasSets;
             }
         }
 
@@ -110,7 +134,9 @@ namespace GUI.ViewModels
             _exerciseCategories.Add("Power");
             _description = "Get down to the ground. Place your hand below your shoulders ...";
             _time = 12;
+            _isCountable = true;
             _numberOfRepetitions = 250;
+            _hasSets = true;
             _numberOfSets = 4;
         }
         #endregion Constructor

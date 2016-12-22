@@ -66,7 +66,7 @@
 
         <!-- CheckBox that indicates if the exercise is countable or not -->
         <CheckBox Grid.Column="2" Grid.Row="5" Margin="0,2,0,2"
-                  VerticalAlignment="Center"/>
+                  VerticalAlignment="Center" IsChecked="{Binding IsCountable}"/>
 
         <!-- Label for the Number of Repetitions Attribute -->
         <Label Grid.Column="1" Grid.Row="6" Content="Number of Repetitions: "/>
@@ -79,7 +79,7 @@
 
         <!-- Checkbox that indicates whether an exercise has sets -->
         <CheckBox Grid.Column="2" Grid.Row="7" Margin="0,2,0,2"
-                  VerticalAlignment="Center"/>
+                  VerticalAlignment="Center" IsChecked="{Binding HasSets}"/>
         
         <!-- Label for the number of sets-->
         <Label Grid.Column="1" Grid.Row="8" Content="Number of Sets: "/>
