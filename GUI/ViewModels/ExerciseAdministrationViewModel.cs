@@ -30,6 +30,21 @@ namespace GUI.ViewModels
         #region Bindings
 
         /// <summary>
+        /// Binding for the left side of the screen.
+        /// </summary>
+        public ObservableCollection<Exercise> Exercises
+        {
+            get
+            {
+                return _exercises;
+            }
+            set
+            {
+                value = _exercises;
+            }
+        }
+
+        /// <summary>
         /// Binding for the name of an exercise.
         /// </summary>
         public String Name
@@ -158,7 +173,7 @@ namespace GUI.ViewModels
             _name = "Push Ups";
             _exerciseCategories = new List<string>();
             _exerciseCategories.Add("Power");
-            _description = "Get down to the ground. Place your hand below your shoulders ...";
+            _description = "Get down to the ground. Place your hands below your shoulders ...";
             _time = 12;
             _isCountable = true;
             _numberOfRepetitions = 250;
