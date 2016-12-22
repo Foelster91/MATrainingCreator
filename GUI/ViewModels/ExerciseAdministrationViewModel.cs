@@ -12,8 +12,10 @@ namespace GUI.ViewModels
     {
         #region Fields
 
+        //Fields for the left side of the view
         private ObservableCollection<Exercise> _exercises;
 
+        //Fields for the right side of the view
         private string _name;
         private List<string> _exerciseCategories;
         private string _description;
@@ -27,6 +29,9 @@ namespace GUI.ViewModels
 
         #region Bindings
 
+        /// <summary>
+        /// Binding for the name of an exercise.
+        /// </summary>
         public String Name
         {
 
@@ -41,6 +46,9 @@ namespace GUI.ViewModels
 
         }
 
+        /// <summary>
+        /// Binding for the exercise category of an exercise.
+        /// </summary>
         public List<string> ExerciseCategories
         {
             get
@@ -53,6 +61,9 @@ namespace GUI.ViewModels
             }
         }
 
+        /// <summary>
+        /// Binding for the description of an exercise.
+        /// </summary>
         public String Description
         {
             get
@@ -65,6 +76,9 @@ namespace GUI.ViewModels
             }
         }
 
+        /// <summary>
+        /// Binding for the time of an exercise.
+        /// </summary>
         public Int32 Time
         {
             get
@@ -77,6 +91,9 @@ namespace GUI.ViewModels
             }
         }
 
+        /// <summary>
+        /// Binding for the Checkbox for the IsCountable property.
+        /// </summary>
         public Boolean IsCountable
         {
             get
@@ -89,6 +106,9 @@ namespace GUI.ViewModels
             }
         }
 
+        /// <summary>
+        /// Binding for the number of repetitions
+        /// </summary>
         public Int32 NumberOfRepetitions
         {
             get
@@ -101,6 +121,9 @@ namespace GUI.ViewModels
             }
         }
 
+        /// <summary>
+        /// Binding for the checkbox of the HasSets property
+        /// </summary>
         public Boolean HasSets
         {
             get
@@ -113,6 +136,9 @@ namespace GUI.ViewModels
             }
         }
 
+        /// <summary>
+        /// Binding for the Number of Sets
+        /// </summary>
         public Int32 NumberOfSets
         {
             get
