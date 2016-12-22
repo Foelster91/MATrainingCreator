@@ -15,7 +15,7 @@ namespace GUI.ViewModels
         private ObservableCollection<Exercise> _exercises;
 
         private string _name;
-        private List<ExerciseCategory> _exerciseCategories;
+        private List<string> _exerciseCategories;
         private string _description;
         private int _time;
         private bool _isCountable;
@@ -39,6 +39,18 @@ namespace GUI.ViewModels
                 value = _name;
             }
 
+        }
+
+        public List<string> ExerciseCategories
+        {
+            get
+            {
+                return _exerciseCategories;
+            }
+            set
+            {
+                value = _exerciseCategories;
+            }
         }
 
         public String Description
@@ -94,6 +106,8 @@ namespace GUI.ViewModels
         public ExerciseAdministrationViewModel()
         {
             _name = "Push Ups";
+            _exerciseCategories = new List<string>();
+            _exerciseCategories.Add("Power");
             _description = "Get down to the ground. Place your hand below your shoulders ...";
             _time = 12;
             _numberOfRepetitions = 250;
