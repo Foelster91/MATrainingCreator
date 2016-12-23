@@ -19,7 +19,7 @@ namespace GUI.ViewModels
         //Fields for the right side of the view
         private string _name;
         private List<string> _exerciseCategories;
-        private ExerciseCategory _selectedExerciseCategory;
+        private string _selectedExerciseCategory;
         private string _description;
         private int _time;
         private bool _isCountable;
@@ -75,7 +75,22 @@ namespace GUI.ViewModels
 
         }
 
-
+        /// <summary>
+        /// Binding for the selected exercise category
+        /// </summary>
+        public String SelectedExerciseCategory
+        {
+            
+            get
+            {             
+                return _selectedExerciseCategory;;
+            }
+            set
+            {
+                _selectedExerciseCategory = value;
+                OnPropertyChanged("SelectedExerciseCategory");
+            }
+        }
 
         /// <summary>
         /// Binding for the description of an exercise.

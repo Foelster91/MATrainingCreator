@@ -50,7 +50,8 @@
         <Label Grid.Column="1" Grid.Row="2" Content="Exercise Category: "/>
 
         <!-- Combobox in which the user can select the exercise category -->
-        <ComboBox Grid.Column="2" Grid.Row="2" Margin="0,2,0,2" ItemsSource="{Binding ExerciseCategories}"/>
+        <ComboBox Grid.Column="2" Grid.Row="2" Margin="0,2,0,2" ItemsSource="{Binding ExerciseCategories}"
+                  SelectedItem="{Binding SelectedExerciseCategory}"/>
 
         <!-- Label for the description -->
         <Label Grid.Column="1" Grid.Row="3" Content="Description:"/>
