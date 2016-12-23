@@ -14,11 +14,12 @@ namespace GUI.ViewModels
         #region Fields
 
         //Fields for the left side of the view
-        private ObservableCollection<Exercise> _exercises;
+        //private ObservableCollection<Exercise> _exercises;
 
         //Fields for the right side of the view
         private string _name;
         private List<string> _exerciseCategories;
+        private ExerciseCategory _selectedExerciseCategory;
         private string _description;
         private int _time;
         private bool _isCountable;
@@ -35,14 +36,14 @@ namespace GUI.ViewModels
         /// <summary>
         /// Binding for the left side of the screen.
         /// </summary>
-        public ObservableCollection<Exercise> Exercises
-        {
-            get
-            {
-                return _exercises;
-            }
+        //public ObservableCollection<Exercise> Exercises
+        //{
+        //    get
+        //    {
+        //        return _exercises;
+        //    }
             
-        }
+        //}
 
         /// <summary>
         /// Binding for the name of an exercise.
@@ -73,6 +74,8 @@ namespace GUI.ViewModels
             }
 
         }
+
+
 
         /// <summary>
         /// Binding for the description of an exercise.
@@ -197,15 +200,8 @@ namespace GUI.ViewModels
         /// </summary>
         public ExerciseAdministrationViewModel()
         {
-            _name = "Push Ups";
-            _exerciseCategories = new List<string>();
-            _exerciseCategories.Add("Power");
-            _description = "Get down to the ground. Place your hands below your shoulders ...";
-            _time = 12;
-            _isCountable = true;
-            _numberOfRepetitions = 250;
-            _hasSets = true;
-            _numberOfSets = 4;
+            LoadExercises();
+            LoadExerciseCategories();
         }
         #endregion Constructor
 
@@ -216,9 +212,30 @@ namespace GUI.ViewModels
         /// </summary>
         private void Save()
         {
-            //just for testing
-            _time = 15;
-            OnPropertyChanged("Time");
+            //check if all the necessary data has been entered by the user to change or add an exercise
+            if(_name == null || _selectedExerciseCategory == null || _description == null || _time == null)
+            {
+                //notify the user that data is missing
+                //just return for now
+                return;
+            }
+        }
+
+        /// <summary>
+        /// Method to load the exercise categories
+        /// </summary>
+        private void LoadExerciseCategories()
+        {
+            _exerciseCategories = new List<string>();
+            _exerciseCategories.Add("Power");
+        }
+
+        /// <summary>
+        /// Method to load the exercises into the datagrid
+        /// </summary>
+        private void LoadExercises()
+        {
+
         }
 
         #endregion Methods
