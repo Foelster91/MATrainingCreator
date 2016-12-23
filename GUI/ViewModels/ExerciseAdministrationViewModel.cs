@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using Logic.Models;
+using System.Windows.Input;
 
 namespace GUI.ViewModels
 {
@@ -24,6 +25,8 @@ namespace GUI.ViewModels
         private int _numberOfRepetitions;
         private bool _hasSets;
         private int _numberOfSets;
+
+        private RelayCommand _saveCommand;
 
         #endregion Fields
 
@@ -167,6 +170,25 @@ namespace GUI.ViewModels
 
         #endregion Bindings
 
+        #region Commands
+
+        /// <summary>
+        /// Binding for the SaveCommand
+        /// </summary>
+        public ICommand SaveCommand
+        {
+            get
+            {
+                if (_saveCommand == null)
+                {
+                    _saveCommand = new RelayCommand(param => this.Save());
+                }
+                return _saveCommand;
+            }
+        }
+
+        #endregion Commands
+
         #region Constructor
         public ExerciseAdministrationViewModel()
         {
@@ -182,5 +204,13 @@ namespace GUI.ViewModels
         }
         #endregion Constructor
 
+        #region Methods
+
+        private void Save()
+        {
+
+        }
+
+        #endregion Methods
     }
 }

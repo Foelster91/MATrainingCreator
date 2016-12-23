@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,52 +11,76 @@ namespace GUI
     public class RelayCommand : ICommand
     {
 
-        Action _targetExecuteMethod;
-        Func<bool> _targetCanExecuteMethod;
+        #region Fields
 
-        public event EventHandler CanExecuteChanged = delegate { };
+        readonly Action<object> _execute;
+        readonly Predicate<object> _canExecute;
 
-        public RelayCommand(Action executeMethod)
+        #endregion // Fields
+
+        #region Constructors
+
+        /// <summary>
+        /// Creates a new command that can always execute.
+        /// </summary>
+        /// <param name="execute">The execution logic.</param>
+        public RelayCommand(Action<object> execute)
+            : this(execute, null)
         {
-            _targetExecuteMethod = executeMethod;
         }
 
-        public RelayCommand(Action executeMethod, Func<bool> targetCanExecuteMethod)
+        /// <summary>
+        /// Creates a new command.
+        /// </summary>
+        /// <param name="execute">The execution logic.</param>
+        /// <param name="canExecute">The execution status logic.</param>
+        public RelayCommand(Action<object> execute, Predicate<object> canExecute)
         {
-            _targetExecuteMethod = executeMethod;
-            _targetCanExecuteMethod = targetCanExecuteMethod;
+            if (execute == null)
+                throw new ArgumentNullException("execute");
+
+            _execute = execute;
+            _canExecute = canExecute;
         }
 
-        public void CanRaiseExecuteChanged()
+        #endregion // Constructors
+
+        #region ICommand Members
+
+        /// <summary>
+        /// Can Execute Method for the ICommand Interface
+        /// </summary>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
+        [DebuggerStepThrough]
+        public bool CanExecute(object parameter)
         {
-            CanExecuteChanged(this, EventArgs.Empty);
+            return _canExecute == null ? true : _canExecute(parameter);
         }
 
-        bool ICommand.CanExecute(object parameter)
+        /// <summary>
+        /// EventHandler for the ICommand interface
+        /// </summary>
+        public event EventHandler CanExecuteChanged
         {
-            if (_targetCanExecuteMethod != null)
-            {
-                return _targetCanExecuteMethod();
-            }
-            if (_targetExecuteMethod != null)
-            {
-                return true;
-            }
-            return false;
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
         }
 
-        void ICommand.Execute(object parameter)
+        /// <summary>
+        /// Execute method for the ICommand interface
+        /// </summary>
+        /// <param name="parameter"></param>
+        public void Execute(object parameter)
         {
-            if (_targetExecuteMethod != null)
-            {
-                _targetExecuteMethod();
-            }
+            _execute(parameter);
         }
+        #endregion
     }
     public class RelayCommand<T> : ICommand
     {
-        Action<T> _TargetExecuteMethod;
-        Func<T, bool> _TargetCanExecuteMethod;
+        readonly Action<T> _TargetExecuteMethod;
+        readonly Func<T, bool> _TargetCanExecuteMethod;
 
         public RelayCommand(Action<T> executeMethod)
         {
