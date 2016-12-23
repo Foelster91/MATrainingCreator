@@ -110,7 +110,7 @@ namespace GUI.ViewModels
         }
 
         /// <summary>
-        /// Binding for the Checkbox for the IsCountable property.
+        /// Binding for the checkbox for the IsCountable property.
         /// </summary>
         public Boolean IsCountable
         {
@@ -191,6 +191,9 @@ namespace GUI.ViewModels
         #endregion Commands
 
         #region Constructor
+        /// <summary>
+        /// Constructor for the ExerciseAdministrationViewModel
+        /// </summary>
         public ExerciseAdministrationViewModel()
         {
             _name = "Push Ups";
@@ -212,6 +215,7 @@ namespace GUI.ViewModels
         /// </summary>
         private void Save()
         {
+            //just for testing
             _time = 15;
             OnPropertyChanged("Time");
         }
