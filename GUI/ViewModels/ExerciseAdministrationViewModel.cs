@@ -41,10 +41,7 @@ namespace GUI.ViewModels
             {
                 return _exercises;
             }
-            set
-            {
-                value = _exercises;
-            }
+            
         }
 
         /// <summary>
@@ -59,7 +56,8 @@ namespace GUI.ViewModels
             }
             set
             {
-                value = _name;
+                _name = value;
+                OnPropertyChanged("Name");
             }
 
         }
@@ -73,10 +71,7 @@ namespace GUI.ViewModels
             {
                 return _exerciseCategories;
             }
-            set
-            {
-                value = _exerciseCategories;
-            }
+
         }
 
         /// <summary>
@@ -90,7 +85,8 @@ namespace GUI.ViewModels
             }
             set
             {
-                value = _description;
+                _description = value;
+                OnPropertyChanged("Description");
             }
         }
 
@@ -105,7 +101,8 @@ namespace GUI.ViewModels
             }
             set
             {
-                value = _time;
+                _time = value;
+                OnPropertyChanged("Time");
             }
         }
 
@@ -135,7 +132,8 @@ namespace GUI.ViewModels
             }
             set
             {
-                value = _numberOfRepetitions;
+                _numberOfRepetitions = value;
+                OnPropertyChanged("NumberOfRepetitions");
             }
         }
 
@@ -165,7 +163,8 @@ namespace GUI.ViewModels
             }
             set
             {
-                value = _numberOfSets;
+                _numberOfSets = value;
+                OnPropertyChanged("NumberOfSets");
             }
         }
 
