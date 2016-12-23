@@ -117,7 +117,8 @@ namespace GUI.ViewModels
             }
             set
             {
-                value = _isCountable;
+                _isCountable = value;
+                OnPropertyChanged("IsCountable");
             }
         }
 
@@ -148,7 +149,8 @@ namespace GUI.ViewModels
             }
             set
             {
-                value = _hasSets;
+                _hasSets = value;
+                OnPropertyChanged("HasSets");
             }
         }
 
