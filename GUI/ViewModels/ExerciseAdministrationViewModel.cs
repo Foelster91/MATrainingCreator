@@ -163,7 +163,8 @@ namespace GUI.ViewModels
             {
                 return _numberOfSets;
             }
-            set{
+            set
+            {
                 value = _numberOfSets;
             }
         }
@@ -206,9 +207,13 @@ namespace GUI.ViewModels
 
         #region Methods
 
+        /// <summary>
+        /// Method to save changes to an exercise
+        /// </summary>
         private void Save()
         {
-
+            _time = 15;
+            OnPropertyChanged("Time");
         }
 
         #endregion Methods
