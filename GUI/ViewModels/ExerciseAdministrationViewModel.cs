@@ -228,7 +228,7 @@ namespace GUI.ViewModels
         private void Save()
         {
             //check if all the necessary data has been entered by the user to change or add an exercise
-            if(_name == null || _selectedExerciseCategory == null || _description == null || _time == null)
+            if(_name == null || _selectedExerciseCategory == null || _description == null)
             {
                 //notify the user that data is missing
                 //just return for now
