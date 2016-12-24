@@ -53,9 +53,10 @@ namespace Data.DatabaseManager
 
                 while (rdr.Read())
                 {
+                    int id = rdr.GetInt32("ID");
                     string name = rdr.GetString("Name");
                     Debug.WriteLine(rdr.GetInt32("ID") + "| " + rdr.GetString("Name") + "| " + rdr.GetString("Description"));
-                    Exercise exercise = new Exercise(name);
+                    Exercise exercise = new Exercise(id, name);
                     exerciselist.Add(exercise);
 
                 }

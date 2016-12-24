@@ -33,7 +33,8 @@
         <DataGrid Grid.Column="0" Grid.Row="1" Grid.RowSpan="10" Margin="5,5,5,5" 
                   ItemsSource="{Binding Exercises}" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Name}"/>
+                <DataGridTextColumn Binding="{Binding ID}" Header="ID"/>
+                <DataGridTextColumn Binding="{Binding Name}" Header="Name"/>
             </DataGrid.Columns>
         </DataGrid>
 

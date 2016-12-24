@@ -13,6 +13,7 @@ namespace Data.Models
     {
         #region Properties
 
+        public Int32 ID { get; set; }
         //Exercises should have a name
         public String Name { get; set; }
 
@@ -35,8 +36,9 @@ namespace Data.Models
 
         #endregion Properties
 
-        public Exercise(string name)
+        public Exercise(int id, string name)
         {
+            ID = id;
             Name = name;
         }
 
