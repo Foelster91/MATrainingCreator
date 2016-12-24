@@ -53,7 +53,10 @@ namespace Data.DatabaseManager
 
                 while (rdr.Read())
                 {
-                    Debug.WriteLine(rdr.GetString("Name"));
+                    string exercisename = rdr.GetString("Name");
+                    Debug.WriteLine(exercisename);
+                    names.Add(exercisename);
+
                 }
             }
 

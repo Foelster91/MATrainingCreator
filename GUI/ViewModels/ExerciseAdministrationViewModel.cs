@@ -15,6 +15,7 @@ namespace GUI.ViewModels
 
         //Fields for the left side of the view
         //private ObservableCollection<Exercise> _exercises;
+        private List<string> _exercises;
 
         //Fields for the right side of the view
         private string _name;
@@ -37,15 +38,23 @@ namespace GUI.ViewModels
 
         /// <summary>
         /// Binding for the left side of the screen.
-        /// </summary>
+        ///// </summary>
         //public ObservableCollection<Exercise> Exercises
         //{
         //    get
         //    {
         //        return _exercises;
         //    }
-            
+
         //}
+
+        public List<String> Exercises
+        {
+            get
+            {
+                return _exercises;
+            }
+        }
 
         /// <summary>
         /// Binding for the name of an exercise.
@@ -256,7 +265,8 @@ namespace GUI.ViewModels
         private void LoadExercises()
         {
             _esh.GetAll();
-            _esh.GetNames();
+            _exercises = _esh.GetNames();
+            OnPropertyChanged("Exercises");
         }
 
         #endregion Methods
