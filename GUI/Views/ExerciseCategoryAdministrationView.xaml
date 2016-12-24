@@ -6,6 +6,60 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <Label Content="This is the Exercise Category Administration View!" FontSize="48"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="12*"/>
+            <ColumnDefinition Width="38*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Label for the heading of the right side -->
+        <Label Grid.Column="0" Grid.Row="0" 
+               Content="Exercise Category Selection" 
+               FontSize="18" HorizontalContentAlignment="Center"/>
+
+        <!-- DataGrid that display all the exercise categories known to the system until this point -->
+        <DataGrid Grid.Column="0" Grid.Row="1" Grid.RowSpan="10" Margin="5,5,5,5" 
+                  ItemsSource="{Binding Exercises}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding ID}" Header="ID"/>
+                <DataGridTextColumn Binding="{Binding Name}" Header="Name"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Label for the heading of the right side -->
+        <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" 
+               Content="Exercise Category Summary" 
+               FontSize="18" HorizontalContentAlignment="Center"/>
+
+        <!-- Label for the name of an exercise category -->
+        <Label Grid.Column="1" Grid.Row="1" Content="Name: "/>
+
+        <!-- Textfield for the user to change the name of an exercise category -->
+        <TextBox Grid.Column="2" Grid.Row="1" Margin="0,2,0,2" 
+                 Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, 
+                        ValidatesOnNotifyDataErrors=True}"/>
+
+        <!-- Label for the description of an exercise category -->
+        <Label Grid.Column="1" Grid.Row="2" Content="Description: "/>
+
+        <!-- Textfield for the for the description of an exercise category -->
+        <TextBox Grid.Column="2" Grid.Row="2" Margin="0,2,0,2" 
+                 Text="{Binding Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, 
+                        ValidatesOnNotifyDataErrors=True}"/>
+
+        <!-- Button to add a new exercise or to save changes to an existing exercise category-->
+        <Button Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" 
+                VerticalAlignment="Top"
+                Width="120" Height="40"
+                Margin="0,10,0,0"
+                Content="Save exercise"
+                Command="{Binding SaveCommand}"/>
+
     </Grid>
 </UserControl>
