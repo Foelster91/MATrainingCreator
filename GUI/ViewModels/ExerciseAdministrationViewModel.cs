@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Logic.ServiceHandler;
+using Data.Models;
 
 namespace GUI.ViewModels
 {
@@ -14,8 +15,8 @@ namespace GUI.ViewModels
         #region Fields
 
         //Fields for the left side of the view
-        //private ObservableCollection<Exercise> _exercises;
-        private List<string> _exercises;
+        private ObservableCollection<Exercise> _exercises;
+        private List<string> _exercisesnames;
 
         //Fields for the right side of the view
         private string _name;
@@ -39,20 +40,20 @@ namespace GUI.ViewModels
         /// <summary>
         /// Binding for the left side of the screen.
         ///// </summary>
-        //public ObservableCollection<Exercise> Exercises
-        //{
-        //    get
-        //    {
-        //        return _exercises;
-        //    }
-
-        //}
-
-        public List<String> Exercises
+        public ObservableCollection<Exercise> Exercises
         {
             get
             {
                 return _exercises;
+            }
+
+        }
+
+        public List<String> ExercisesNames
+        {
+            get
+            {
+                return _exercisesnames;
             }
         }
 
@@ -265,8 +266,8 @@ namespace GUI.ViewModels
         private void LoadExercises()
         {
             _esh.GetAll();
-            _exercises = _esh.GetNames();
-            OnPropertyChanged("Exercises");
+            _exercisesnames = _esh.GetNames();
+            OnPropertyChanged("ExercisesNames");
         }
 
         #endregion Methods

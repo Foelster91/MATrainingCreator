@@ -147,6 +147,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{d109d0cc-f7d9-41a4-b541-be1f114354bc}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logic\Logic.csproj">
       <Project>{8b17cf36-badb-4285-9615-895e3eecdb96}</Project>
       <Name>Logic</Name>

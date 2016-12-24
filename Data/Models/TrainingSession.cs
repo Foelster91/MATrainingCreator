@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logic.Models
+namespace Data.Models
 {
     /// <summary>
     /// The model for the training sessions.

@@ -31,7 +31,11 @@
 
         <!-- DataGrid that display all the exercises known to the system until this point -->
         <DataGrid Grid.Column="0" Grid.Row="1" Grid.RowSpan="10" Margin="5,5,5,5" 
-                  DataContext="{Binding Exercises}"/>
+                  ItemsSource="{Binding Exercises}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding ExercisesNames}"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
         <!-- Label for the heading of the right side -->
         <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" 

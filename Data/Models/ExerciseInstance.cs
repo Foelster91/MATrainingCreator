@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logic.Models
+namespace Data.Models
 {
     /// <summary>
     /// A class that represents an concrete exercise, in which properties such as
