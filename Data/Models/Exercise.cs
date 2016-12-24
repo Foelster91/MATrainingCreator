@@ -34,5 +34,15 @@ namespace Data.Models
         public bool HasSets { get; set; }
 
         #endregion Properties
+
+        public Exercise(string name)
+        {
+            Name = name;
+        }
+
+        public Exercise()
+        {
+
+        }
     }
 }
