@@ -23,7 +23,7 @@ namespace Data
         #region Bindings
 
         /// <summary>
-        /// Binding for the connection
+        /// Binding for the mysqlconnection
         /// </summary>
         public MySqlConnection Connection
         {

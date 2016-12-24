@@ -10,7 +10,7 @@ namespace Data.DatabaseManager
 {
     public class ExerciseDatabaseManager
     {
-        public void GetAll()
+        public static void GetAll()
         {
             MySqlDatabaseLogger logger = new MySqlDatabaseLogger();
             logger.Log();
