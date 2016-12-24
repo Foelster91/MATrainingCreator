@@ -36,7 +36,7 @@ namespace Data.DatabaseManager
 
         }
 
-        public ObservableCollection<Exercise> GetAllExercises()
+        public static ObservableCollection<Exercise> GetAllExercises()
         {
             ObservableCollection<Exercise> exerciselist = new ObservableCollection<Exercise>();
             MySqlDatabaseLogger logger = new MySqlDatabaseLogger();
@@ -55,7 +55,7 @@ namespace Data.DatabaseManager
                 {
                     string name = rdr.GetString("Name");
                     Debug.WriteLine(rdr.GetInt32("ID") + "| " + rdr.GetString("Name") + "| " + rdr.GetString("Description"));
-                    Exercise exercise = new Exercise("Name");
+                    Exercise exercise = new Exercise(name);
                     exerciselist.Add(exercise);
 
                 }

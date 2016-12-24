@@ -266,6 +266,7 @@ namespace GUI.ViewModels
         private void LoadExercises()
         {
             _esh.GetAll();
+            _exercises = _esh.GetAllExercises();
             _exercisesnames = _esh.GetNames();
             OnPropertyChanged("ExercisesNames");
         }
