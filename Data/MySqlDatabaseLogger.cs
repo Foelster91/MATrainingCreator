@@ -13,9 +13,29 @@ namespace Data
     /// </summary>
     public class MySqlDatabaseLogger
     {
+        #region Fields
+
         //generate a mysqlconnection object
         MySqlConnection conn = null;
 
+        #endregion
+
+        #region Bindings
+
+        /// <summary>
+        /// Binding for the connection
+        /// </summary>
+        public MySqlConnection Connection
+        {
+            get
+            {
+                return conn;
+            }
+        }
+
+        #endregion
+
+        #region Methods
         /// <summary>
         /// Method to establish a connection to a specified mysql database.
         /// </summary>
@@ -62,23 +82,7 @@ namespace Data
             }
         }
 
-        //public void SelectData()
-        //{
-        //    if (conn != null)
-        //    {
-        //        MySqlDataReader rdr = null;
-        //        string stm = "SELECT * FROM exercise";
-        //        MySqlCommand cmd = new MySqlCommand(stm, conn);
-        //        rdr = cmd.ExecuteReader();
+        #endregion
 
-        //        Debug.WriteLine("QUERY RESULTS");
-
-        //        while (rdr.Read())
-        //        {
-        //            Debug.WriteLine(rdr.GetInt32("ID") + "| " + rdr.GetString("Name") + "| " + rdr.GetString("Description"));
-        //        }
-        //        LogOff();
-        //    }
-        //}
     }
 }
