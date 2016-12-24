@@ -33,5 +33,33 @@ namespace Data.DatabaseManager
             logger.LogOff();
 
         }
+
+        public static List<String> GetNames()
+        {
+            List<String> names = new List<String>();
+
+            MySqlDatabaseLogger logger = new MySqlDatabaseLogger();
+
+            logger.Log();
+
+            if (logger.Connection != null)
+            {
+                MySqlDataReader rdr = null;
+                string stm = "SELECT Name FROM exercise";
+                MySqlCommand cmd = new MySqlCommand(stm, logger.Connection);
+                rdr = cmd.ExecuteReader();
+
+                Debug.WriteLine("QUERY RESULTS FOR EXERCISE NAME");
+
+                while (rdr.Read())
+                {
+                    Debug.WriteLine(rdr.GetString("Name"));
+                }
+            }
+
+            logger.LogOff();
+
+            return names;
+        }
     }
 }

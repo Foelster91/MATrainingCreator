@@ -13,5 +13,10 @@ namespace Logic.ServiceHandler
         {
             ExerciseDatabaseManager.GetAll();
         }
+
+        public void GetNames()
+        {
+            ExerciseDatabaseManager.GetNames();
+        }
     }
 }

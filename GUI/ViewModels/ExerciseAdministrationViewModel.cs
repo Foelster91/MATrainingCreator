@@ -256,6 +256,7 @@ namespace GUI.ViewModels
         private void LoadExercises()
         {
             _esh.GetAll();
+            _esh.GetNames();
         }
 
         #endregion Methods
