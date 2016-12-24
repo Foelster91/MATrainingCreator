@@ -30,6 +30,8 @@ namespace GUI.ViewModels
 
         private RelayCommand _saveCommand;
 
+        private ExerciseServiceHandler _esh;
+
         #endregion Fields
 
         #region Bindings
@@ -217,6 +219,8 @@ namespace GUI.ViewModels
         public ExerciseAdministrationViewModel()
         {
             ExerciseServiceHandler esh = new ExerciseServiceHandler();
+            _esh = esh;
+
             LoadExercises();
             LoadExerciseCategories();
         }
@@ -252,7 +256,7 @@ namespace GUI.ViewModels
         /// </summary>
         private void LoadExercises()
         {
-
+            _esh.GetAll();
         }
 
         #endregion Methods
