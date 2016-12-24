@@ -39,10 +39,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Exercise.cs" />
-    <Compile Include="Models\ExerciseCategory.cs" />
-    <Compile Include="Models\ExerciseInstance.cs" />
-    <Compile Include="Models\TrainingSession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceHandler\ExerciseServiceHandler.cs" />
   </ItemGroup>

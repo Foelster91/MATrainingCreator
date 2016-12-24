@@ -41,6 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseManager\ExerciseDatabaseManager.cs" />
+    <Compile Include="Models\Exercise.cs" />
+    <Compile Include="Models\ExerciseCategory.cs" />
+    <Compile Include="Models\ExerciseInstance.cs" />
+    <Compile Include="Models\TrainingSession.cs" />
     <Compile Include="MySqlDatabaseLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
