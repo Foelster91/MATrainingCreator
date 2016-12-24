@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using Logic.Models;
 using System.Windows.Input;
+using Logic.ServiceHandler;
 
 namespace GUI.ViewModels
 {
@@ -215,6 +216,7 @@ namespace GUI.ViewModels
         /// </summary>
         public ExerciseAdministrationViewModel()
         {
+            ExerciseServiceHandler esh = new ExerciseServiceHandler();
             LoadExercises();
             LoadExerciseCategories();
         }
