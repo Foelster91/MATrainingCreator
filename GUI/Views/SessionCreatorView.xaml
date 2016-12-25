@@ -37,6 +37,94 @@
                Content="Exercise Description" 
                FontSize="18" HorizontalContentAlignment="Center"/>
 
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="32*"/>
+                <ColumnDefinition Width="68*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!-- Label for the name of an exercise -->
+            <Label Grid.Column="0" Grid.Row="0" Content="Name: "/>
+
+            <!-- Textfield for the user to change the name of an exercise -->
+            <TextBox Grid.Column="1" Grid.Row="0" Margin="0,2,0,2" 
+                 Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, 
+                        ValidatesOnNotifyDataErrors=True}"/>
+
+            <!-- Label for the exercise category -->
+            <Label Grid.Column="0" Grid.Row="1" Content="Exercise Category: "/>
+
+            <!-- Combobox in which the user can select the exercise category -->
+            <ComboBox Grid.Column="1" Grid.Row="1" Margin="0,2,0,2" ItemsSource="{Binding ExerciseCategories}"
+                  SelectedItem="{Binding SelectedExerciseCategory}"/>
+
+            <!-- Label for the description -->
+            <Label Grid.Column="0" Grid.Row="2" Content="Description:"/>
+
+            <!-- Description for the exercise -->
+            <TextBox Grid.Column="1" Grid.Row="2" Margin="0,2,0,2" 
+                 Text="{Binding Description , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, 
+                        ValidatesOnNotifyDataErrors=True}"/>
+
+            <!-- Label for the time -->
+            <Label Grid.Column="0" Grid.Row="3" Content="Time: "/>
+
+            <!-- TextBox in which the user can enter the required time for an exercise -->
+            <TextBox Grid.Column="1" Grid.Row="3" Margin="0,2,0,2" 
+                 Text="{Binding Time, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, 
+                        ValidatesOnNotifyDataErrors=True}"/>
+
+            <!-- Label for the IsCountable Property-->
+            <Label Grid.Column="0" Grid.Row="4" Content="IsCountable: "/>
+
+            <!-- CheckBox that indicates if the exercise is countable or not -->
+            <CheckBox Grid.Column="1" Grid.Row="4" Margin="0,2,0,2"
+                  VerticalAlignment="Center" IsChecked="{Binding IsCountable}"/>
+
+            <!-- Label for the Number of Repetitions Attribute -->
+            <Label Grid.Column="0" Grid.Row="5" Content="Number of Repetitions: "/>
+
+            <!-- TextBox in which the user can enter the number of repetitions of an exercise -->
+            <TextBox Grid.Column="1" Grid.Row="5" Margin="0,2,0,2" 
+                 Text="{Binding NumberOfRepetitions, Mode=TwoWay, 
+                        UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True}"/>
+
+            <!-- Label for the HasSets Property -->
+            <Label Grid.Column="0" Grid.Row="6" Content="Has Sets: "/>
+
+            <!-- Checkbox that indicates whether an exercise has sets -->
+            <CheckBox Grid.Column="1" Grid.Row="6" Margin="0,2,0,2"
+                  VerticalAlignment="Center" IsChecked="{Binding HasSets}"/>
+
+            <!-- Label for the number of sets-->
+            <Label Grid.Column="0" Grid.Row="7" Content="Number of Sets: "/>
+
+            <!-- Textbox for the user to see or adjust the number of sets in an exercise -->
+            <TextBox Grid.Column="1" Grid.Row="7" Margin="0,2,0,2" 
+                 Text="{Binding NumberOfSets, Mode=TwoWay, 
+                        UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True}"/>
+
+            <!-- Button to add a new exercise or to save changes to an existing exercise -->
+            <Button Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="8" 
+                VerticalAlignment="Top"
+                Width="120" Height="40"
+                Margin="0,10,0,0"
+                Content="Add exercise"
+                Command="{Binding AddCommand}"/>
+        </Grid>
+        
+        
         <!-- Label for the heading of the right side -->
         <Label Grid.Column="2" Grid.Row="0" 
                Content="Trainig Session Data" 
