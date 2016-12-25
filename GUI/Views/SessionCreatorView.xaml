@@ -21,6 +21,17 @@
                Content="Training Session Overview" 
                FontSize="18" HorizontalContentAlignment="Center"/>
 
+        <!-- DataGrid that display all the exercises known to the system until this point -->
+        <DataGrid Grid.Column="0" Grid.Row="1" Grid.RowSpan="10" Margin="5,5,5,5" 
+                  ItemsSource="{Binding Exercises}" AutoGenerateColumns="False" 
+                  CanUserResizeColumns="False" CanUserReorderColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Time}" Header="Time" Width="auto"/>
+                <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="auto"/>
+                <DataGridTextColumn Binding="{Binding Description}" Header="Description" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
         <!-- Label for the heading of the middle -->
         <Label Grid.Column="1" Grid.Row="0" 
                Content="Exercise Description" 
