@@ -6,6 +6,35 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <Label Content="This is the SessionCreatorView" FontSize="48"/>    
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="33*"/>
+            <ColumnDefinition Width="33*"/>
+            <ColumnDefinition Width="33*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Label for the heading of the right side -->
+        <Label Grid.Column="0" Grid.Row="0" 
+               Content="Training Session Overview" 
+               FontSize="18" HorizontalContentAlignment="Center"/>
+
+        <!-- Label for the heading of the right side -->
+        <Label Grid.Column="1" Grid.Row="0" 
+               Content="Exercise Description" 
+               FontSize="18" HorizontalContentAlignment="Center"/>
+
+        <!-- Label for the heading of the right side -->
+        <Label Grid.Column="2" Grid.Row="0" 
+               Content="Trainig Session Data" 
+               FontSize="18" HorizontalContentAlignment="Center"/>
+
+        <Grid Grid.Column="2" Grid.Row="1">
+            
+        </Grid>
+        
     </Grid>
+       
 </UserControl>
