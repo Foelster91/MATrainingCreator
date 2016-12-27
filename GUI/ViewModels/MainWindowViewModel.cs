@@ -66,7 +66,7 @@ namespace GUI.ViewModels
         /// this methode navigates to the appropriate view.
         /// </summary>
         /// <param name="destination"></param>
-        private void Navigate(string destination)
+        public void Navigate(string destination)
         {
             switch(destination){
                 case "AdministrationExercises":
